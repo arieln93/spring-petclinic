@@ -37,7 +37,7 @@ Save the job, then enter it and click 'Build now', and wait for the buied to fin
 
 The docker image is now pushed to `arieln993/petclinic:latest`, the link to DockerHub is: https://hub.docker.com/r/arieln993/petclinic
 
-### Step 2: Run docker image
+### Step 3: Run docker image
 In order to run it, first pull it from the DockerHub repo:
 ```docker pull arieln993/petclinic:latest```
 
