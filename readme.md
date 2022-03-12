@@ -1,5 +1,7 @@
 # Spring-PetClinic sample appliation with Jenkins pipleline
 
+This project is originally forked from: https://github.com/spring-projects/spring-petclinic
+
 ## Prerequisites
 In order to run this project, you need to have the following installed on your local machine:
 * Git
