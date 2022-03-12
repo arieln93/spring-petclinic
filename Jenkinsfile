@@ -1,21 +1,26 @@
 #!groovy
 pipeline {
     agent none
-   stages {
-    stage('Clone the repo') {
-      steps {
-        git 'https://github.com/arieln93/spring-petclinic.git'
-      }
-    }    
-    stage('Maven package') {
-      agent {         
-       docker {          
-         image 'maven:3.5.0'         
-     }       
-  }       
-  steps {
-       sh './mvnw package'
-       }
-     }
-   }
- }
+    stages {
+        stage('Clone the repo') {
+            steps {
+                git 'https://github.com/arieln93/spring-petclinic.git'
+            }
+        }
+        stage('Compile the code') {
+            steps {
+                sh './mvnw compile'
+            }
+        }
+        stage('Run the tests') {
+            steps {
+                sh './mvnw test' 
+            }
+        }
+        stage('Package') {
+            steps {
+                sh './mvnw package' 
+            }      
+        }   
+    }
+}
