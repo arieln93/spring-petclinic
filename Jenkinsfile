@@ -21,6 +21,18 @@ pipeline {
             steps {
                 sh 'mvn package' 
             }      
-        }   
+        }
+        stage('Build coker image') {
+            agent any
+            steps {
+                sh 'docker build -t arieln993/petclinic:latest .'
+            }
+        }
+        stage('Push docker image') {
+            agent any
+            steps {
+                sh 'docker push arieln993/petclinic:latest'
+            }
+        }
     }
 }
