@@ -1,7 +1,12 @@
 #!groovy
 pipeline {
     agent none
-   stages {     
+   stages {
+    stage('Clone the repo') {
+      steps {
+        git 'https://github.com/arieln93/spring-petclinic.git'
+      }
+    }    
     stage('Maven package') {
       agent {         
        docker {          
