@@ -17,10 +17,18 @@ Notice that this project is configured to be running on port 8080, so if you alr
 4. Restart your Jenkins server.
 
 ## How to run
+### Step 1: Clone the project
+Clone the project and validate that you can run it on your machine without any errors, using the following commands: 
+```
+git clone https://github.com/talitz/spring-petclinic-jenkins-pipeline.git
+cd spring-petclinic
+./mvnw package
+java -jar target/*.jar
+```
+Now browse to http://localhost:8080/ and validate you can see the application running:
+<img width="1042" alt="petclinic-screenshot" src="https://cloud.githubusercontent.com/assets/838318/19727082/2aee6d6c-9b8e-11e6-81fe-e889a5ddfded.png">
 
-First, clone the project using:  
-```git clone https://github.com/talitz/spring-petclinic-jenkins-pipeline.git```
-
+### Step 2: Creat a pipeline
 Open Jenkins on your local machine, and create a new pipeline with this repo link.
 
 In the job configiration, under 'Pipeline', choose "Pipeline script from SCM" and paste this repo link.
@@ -29,6 +37,7 @@ Save the job, then enter it and click 'Build now', and wait for the buied to fin
 
 The docker image is now pushed to `arieln993/petclinic:latest`, the link to DockerHub is: https://hub.docker.com/r/arieln993/petclinic
 
+### Step 2: Run docker image
 In order to run it, first pull it from the DockerHub repo:
 ```docker pull arieln993/petclinic:latest```
 
