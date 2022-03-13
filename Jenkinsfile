@@ -34,5 +34,15 @@ pipeline {
                 sh 'docker push arieln993/petclinic:latest'
             }
         }
+        stage('Upload to Artifactory') {
+          agent {
+            docker {
+              image 'releases-docker.jfrog.io/jfrog/jfrog-cli-v2-jf jf -v'
+            }
+          }
+          steps {
+            sh 'jfrog rt upload --url https://arieln993.jfrog.io/artifactory/petclinic/ target/*.jar petclinic/'
+          }
+        }
     }
 }
