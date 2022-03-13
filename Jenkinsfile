@@ -37,11 +37,11 @@ pipeline {
         stage('Upload to Artifactory') {
           agent {
             docker {
-              image 'releases-docker.jfrog.io/jfrog/jfrog-cli-v2-jf jf -v'
+              image 'releases-docker.jfrog.io/jfrog/jfrog-cli-v2-jf'
             }
           }
           steps {
-            sh 'jfrog rt upload --url https://arieln993.jfrog.io/artifactory/petclinic/ target/*.jar petclinic/'
+            sh 'jf rt upload --url https://arieln993.jfrog.io/artifactory/petclinic/ target/*.jar petclinic/'
           }
         }
     }
