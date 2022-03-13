@@ -29,6 +29,9 @@ Now browse to http://localhost:8080/ and validate you can see the application ru
 <img width="1042" alt="petclinic-screenshot" src="https://cloud.githubusercontent.com/assets/838318/19727082/2aee6d6c-9b8e-11e6-81fe-e889a5ddfded.png">
 
 ### Step 2: Creat a pipeline
+Note: Before starting this step, please make sure you are logged in to docker `docker login -u <your-usename>`
+
+
 Open Jenkins on your local machine, and create a new pipeline with this repo link.
 
 In the job configiration, under 'Pipeline', choose "Pipeline script from SCM" and paste this repo link.
