@@ -42,7 +42,7 @@ pipeline {
             }
           }
           steps {
-            sh 'jf rt upload --url https://arieln993.jfrog.io/artifactory/petclinic/ target/*.jar petclinic/'
+            sh 'jf rt upload --url https://arieln993.jfrog.io/artifactory/ target/*.jar petclinic/'
           }
         }
     }
